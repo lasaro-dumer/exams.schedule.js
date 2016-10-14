@@ -1,0 +1,51 @@
+<html ng-app="exams" ng-module="userModule">
+
+<head>
+	<base href="/" />
+	<title> Exams Schedule</title>
+	<script type="text/javascript" src="js/angular/angular.min.js"></script>
+	<script type="text/javascript" src="js/angular-cookies/angular-cookies.min.js"></script>
+	<script type="text/javascript" src="js/angular-route/angular-route.min.js"></script>
+	<script type="text/javascript" src="js/services/userAuth.js"></script>
+	<script type="text/javascript" src="js/services/user.js"></script>
+	<script type="text/javascript" src="js/controllers/user.js"></script>
+	<script type="text/javascript" src="js/core.js"></script>
+</head>
+
+<body ng-controller="userController">
+	<div ng-show="!logged" style="border: 1px solid; margin:5px;">
+		<span>Login</span>
+		<input type="text" ng-model="user.loginName" />
+		<span>Password</span>
+		<input type="password" ng-model="user.password" />
+		<button type="button" ng-click="login()">
+			Sign in
+		</button>
+	</div>
+	<div ng-show="logged" style="border: 1px solid; margin:5px;"">
+		<div style="border: 1px solid; margin:5px;">
+			<input type="text" ng-model="newUser.name" />
+			<input type="text" ng-model="newUser.loginName" />
+			<input type="password" ng-model="newUser.password" />
+			<button ng-click="addUser()">
+				Add User
+			</button>
+		</div>
+		<div style="border: 1px solid; margin:5px;">
+			<button ng-click="listUsers()">
+				List users
+			</button>
+			<table style="border: 1px solid;" ng-show="userList.length > 0">
+				<tbody>
+					<tr ng-repeat="user in userList">
+						<td>{{user.name}}</td>
+						<td>{{user.loginName}}</td>
+						<td>{{user.sysAdmin}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+
+</html>

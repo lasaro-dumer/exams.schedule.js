@@ -1,0 +1,36 @@
+{
+    "name": "exams.schedule.js",
+    "version": "1.0.0",
+    "description": "Exams Schedule Helper",
+    "license": "MIT",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lasaro-dumer/exams.schedule.js.git"
+    },
+    "keywords": [
+        "schedule"
+    ],
+    "author": "Lásaro Dumer",
+    "bugs": {
+        "url": "https://github.com/lasaro-dumer/exams.schedule.js/issues"
+    },
+    "homepage": "https://github.com/lasaro-dumer/exams.schedule.js#readme",
+    "dependencies": {
+        "body-parser": "*",
+        "cookie-parser": "*",
+        "express": "*",
+        "express-session": "*",
+        "method-override": "*",
+        "mongodb": "*",
+        "morgan": "*",
+        "mongoose": "*",
+        "bcrypt": "*"
+    },
+    "scripts": {
+        "postinstall": "bower install"
+    }
+}
